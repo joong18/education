@@ -1,0 +1,178 @@
+:root {
+    /* Color */
+    --white-color: white;
+    --blue-color: #0E047A;
+    --gray-color: #564674;
+    --lightgray-color: #eeeeee;
+
+    --yellow-color: #FBAE3C;
+    --wood-color: #A68256;
+    --green-color: #005248;
+    --beige-color: #FFECCC;
+    --black-color: black;
+    --border-color: #ccc;
+    --border-color2: #c2c2c2;
+    /* Size  */
+    --padding: 0.75rem;
+    --margin-small: 0.4rem;
+    --margin-large: 0.6rem;
+    /* Font size  */
+    --font-large: 1.5rem;
+    --font-medium: 1.125rem;
+    --font-small: 0.75rem;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('image/blob-scene-haikei.svg');
+    background-size: cover;
+    font-family:'GmarketSans';
+    font-size: var(--font-medium);
+}
+
+header {
+    background-color: #005248;
+    border-bottom: 5px solid var(--yellow-color);
+    /*background: rgb(14,4,122);
+    background: linear-gradient(90deg, rgba(14,4,122,1) 0%, rgba(78,72,143,1) 38%, rgba(225,245,254,1) 100%);*/
+    padding: calc(var(--padding)*1.5);    
+    color: var(--white-color);
+    display: flex; justify-content: space-between; text-align: center;
+}
+header a { color: var(--white-color); font-size: var(--font-large);}
+
+main h2 {color: var(--white-color); padding: var(--padding);}
+
+/* 검색 조건*/
+main .searchBox{
+    border: 1px solid var(--border-color);
+    padding: var(--padding) calc(var(--padding)*2);
+    margin: var(--margin-large) var(--margin-small); 
+    position: relative;   
+    display: flex; justify-content: space-between;
+    background-color: var(--lightgray-color); align-items: center;
+}
+
+.searchBox .radioButton { 
+    width: 50%; display: flex; justify-content: space-between; align-items: center;
+}
+
+.searchBox .radioButton1 { 
+    width: 25%; display: flex; justify-content: space-between; align-items: center;
+}
+.searchBox .searchValueArea {
+    width: 50%; display: flex; justify-content: space-evenly; align-items: center;
+}
+
+/* 검색 결과 리스트*/
+main .tableList{
+    border: 1px solid var(--border-color);  
+    position: relative;   
+    display: flex; justify-content: space-between;     
+    margin: var(--margin-large) var(--margin-small); 
+}
+
+table{ 
+    border:0;  border-collapse: collapse; text-align: center; width: 100%;  
+    height:20rem;  display:block;  overflow: auto;
+}
+
+th, td{ border-top: 1px  solid var(--gray-color); padding: var(--padding) calc(var(--padding)*2);}
+th { background-color: var(--wood-color); color: var(--black-color); font-size: var(--font-medium);}
+tr:nth-child(2n+0){background-color: var(--beige-color); }
+tr:nth-child(odd){background-color: var(--white-color); }
+.ListHead{ position: sticky; top: 0;}
+
+/* 입력 */
+main .inputBox {     
+    width: 99%;
+    position: relative;
+    border: 1px solid var(--border-color); 
+    padding: var(--padding) calc(var(--padding)*2);
+    margin: var(--margin-large) var(--margin-small);     
+}
+
+.inputBox .formInput { 
+    display: table;
+    width: 50%;
+}
+.inputBox .formInput .inputItem{
+    display: table-row;   
+}
+.inputBox .formInput .inputItem label, .inputBox .formInput .inputItem input, .inputBox .formInput .inputItem select {
+    display: table-cell;
+    margin: var(--margin-small) var(--margin-small);     
+}    
+
+
+i {
+    margin-right: 10px;
+    font-size: var(--font-medium);    
+}
+
+/*
+button {
+    font-size: var(--font-medium);
+    margin-left: 5px;
+    padding: 4px 5px;
+    border-radius: 40%;
+}
+
+button:hover{
+    background:#fff;
+    color:#1AAB8A;
+}*/
+
+.btnSearch {	
+	background-color:var(--green-color);
+	border-radius:20px;
+	display:inline-block;
+	cursor:pointer;
+	color: var(--white-color);	
+    font-size: var(--font-medium);
+	font-weight:bold;
+	padding: calc(var(--padding)/2) calc(var(--padding)*2) ;
+	text-decoration:none;
+}
+.btnSearch:hover {
+	background-color: var(--yellow-color);
+    color: var(--black-color);
+}
+.btnSearch i {color: var(--white-color);}
+.btnSearch:hover i {color: var(--black-color);}
+
+.inputBox button {	
+	background-color:var(--yellow-color);
+	border-radius:20px;
+	display:inline-block;
+	cursor:pointer;
+	color: var(--black-color);	
+    font-size: var(--font-medium);
+	font-weight:bold;
+	padding: calc(var(--padding)/2) calc(var(--padding)*1.5) ;
+	text-decoration:none;
+}
+.inputBox button:hover {
+	background-color: var(--green-color);
+    color: var(--white-color);
+}
+
+.inputBox button i {color: var(--black-color);}
+.inputBox button:hover i {color: var(--white-color);}
+
+.inputTxt, select { 
+    width: 20rem;
+    height: 1.75rem;
+} 
+
+#newBt {position: absolute; top: 15rem; right: 1.5rem; }
+#saveBt {position: absolute; top: 12rem; right: 1.5rem;}         
+#deleteBt {position: absolute; top:  18rem; right: 1.5rem; }
+
+
+

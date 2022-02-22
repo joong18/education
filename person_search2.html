@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>직원 검색</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="bsnscard_style.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/b5da7f7cfe.js" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script defer type="text/javascript" src="table-list_2.js"></script>
+</head>
+<body>
+	<header>
+		<h2>부산광역시미래교육원 명함집</h2>
+		<a href="company_search1.html">회사 검색</a>
+	</header>
+	<main  id="psMain">
+     <!--페이지메뉴 타이틀-->   
+    <h2 class="pageTitle">직원 검색</h2>
+    			<!--검색조건 창-->
+      <section class="searchBox">
+				<div class="radioButton">
+         	<input type="radio" id="searchItem1" name="item" value="name">
+        	<label for="searchItem1">직원명</label>
+        	<input type="radio" id="searchItem2" name="item" value="mobile">
+        	<label for="searchItem2">휴대폰 번호</label>
+        	<input type="radio" id="searchItem3" name="item" value="com_id">
+        	<label for="searchItem3">회사명</label>
+        	<input type="radio" id="searchItem4" name="item" value="system_charge">
+        	<label for="searchItem4">담당시스템</label>
+				</div>
+		    <div class="searchValueArea">
+				<input name="searchValue" id="searchValue" title="검색단어" class="searchInputTxt" type="text" value=""> 
+				<button title="검색" class="btnSearch" onclick="javascript:searchEvent()"><i class="fas fa-search"></i>검색</button>
+			  </div>
+			</section>
+			<!--검색결과 리스트-->
+			<section class="tableList">
+				<table class="psList">
+					<thead>
+						<tr>
+							<th class="ListHead">선택박스</th>
+							<th class="ListHead">ID</th>
+							<th class="ListHead">직원명</th>
+							<th class="ListHead">회사명</th>
+							<th class="ListHead">직위/직급</th>						
+							<th class="ListHead">휴대폰</th>
+							<th class="ListHead">email</th>						
+							<th class="ListHead">시스템</th>								
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</section>
+		<!--입력창-->
+		<section class="inputBox">
+			<form class="formInput">
+				<div class="inputItem">
+				<label for="name">직원명 </label>
+				<input type="text" name="name" id="name" class="inputTxt" required>
+				</div>
+				<div class="inputItem">
+					<label for="com_name">회사명 </label>
+					<select name="com_name" id="com_name">
+						<option value="회사명 선택">회사명 선택</option>						
+					</select>
+				</div>			
+				<div class="inputItem">
+					<label for="position">직위/직급 </label>
+					<input type="text" name="position" id="position" class="inputTxt">
+				</div>
+				<div class="inputItem">
+				<label for="mobile">휴대폰 번호 </label>
+				<input type="text" name="mobile" id="mobile" class="inputTxt">
+				</div>				
+				<div class="inputItem">
+				<label for="email">직원 email </label>
+				<input type="text" name="email" id="email" class="inputTxt">
+				</div>
+				<div class="inputItem">
+				<label for="tel">회사 사무실 전화번호 </label>
+				<input type="text" name="tel" id="tel" class="inputTxt" >
+				</div>
+				<div class="inputItem">
+				<label for="fax">회사 FAX 번호 </label>
+				<input type="text" name="fax" id="fax" class="inputTxt" >
+				</div>
+				<div class="inputItem">
+				<label for="part">영업 또는 기술 </label>
+				<input type="text" name="part" id="part" class="inputTxt" >
+				</div>
+				<div class="inputItem">
+				<label for="system">담당시스템 </label>
+				<input type="text" name="system" id="system" class="inputTxt">
+				</div>				
+		</form>
+		<!-- <button title="신규" id="newBt" onclick="javascript:resetEvent()"><i class="fas fa-plus"></i>신규</button>		 -->
+		<button title="신규" id="newBt" ><i class="fas fa-plus"></i>신규</button>		
+		<button title="저장" id="saveBt"><i class="far fa-save"></i>저장</button>
+		<button title="삭제" id="deleteBt"><i class="fas fa-trash-alt"></i>삭제</button>
+	  
+		</section>
+	
+
+</main>
+</body>
+</html>
