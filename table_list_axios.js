@@ -2,7 +2,7 @@ let companies, persons;
 let currentPerson, currentCompany;
 let psDelTaget = false, comDelTaget = false, newBt = false;
 
-const axios = require('axios').default;
+//const axios = require('axios').default;
 
 // 업체 세부사항 보여주기 위한 이벤트 리스너 등록
 function showCompanyDetail(row, company) {
@@ -120,31 +120,43 @@ function initCompanySelectBox() {
 //     })  
 
 // }
+//const axios = require('axios');
 
 function fetchCompaniesAndPersons() {
-  const axios = require('axios');
 
   axios.get('http://mrtg1.busanedu.net/namecard/companies')
     .then(function(response){
-      companies = response;
+      companies = response.data;
+      console.log(response.data);
+      console.log(companies);
+      companyOrPerson();
     })
+    .catch(error => {
+      console.log(error);
+    }) 
 
   axios.get('http://mrtg1.busanedu.net/namecard/persons')
     .then(function(response){
-      persons = response;
+      persons = response.data;
+      console.log(persons);
       persons.forEach(person => person['com_name'] = getCompanyName(person));
-      if (document.querySelector(".psList tbody") !== null) {
-        initPersonList();
-        initCompanySelectBox();        
-      } else if (document.querySelector(".comList tbody") !== null) {      
-        initCompanyList();
-      } else {
-        return
-      }      
+      companyOrPerson();            
     })    
     .catch(error => {
       console.log(error);
     })  
+    
+}
+
+function companyOrPerson(){
+  if (document.querySelector(".psList tbody") !== null) {
+    initPersonList();
+    initCompanySelectBox();        
+  } else if (document.querySelector(".comList tbody") !== null) {      
+    initCompanyList();
+  } else {
+    return
+  }
 }
 
 window.onload = function() {
