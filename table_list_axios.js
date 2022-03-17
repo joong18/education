@@ -127,7 +127,7 @@ function fetchCompaniesAndPersons() {
   axios.get('http://mrtg1.busanedu.net/namecard/companies')
     .then(function(response){
       companies = response.data;
-      console.log(response.data);
+      console.log(response);
       console.log(companies);
       companyOrPerson();
     })
@@ -138,6 +138,7 @@ function fetchCompaniesAndPersons() {
   axios.get('http://mrtg1.busanedu.net/namecard/persons')
     .then(function(response){
       persons = response.data;
+      console.log(response);
       console.log(persons);
       persons.forEach(person => person['com_name'] = getCompanyName(person));
       companyOrPerson();            

@@ -29,7 +29,7 @@
 }
 
 body {
-    background-image: url('image/blob-scene-haikei.svg');
+    background-image: url('http://211.182.233.46:4388/image/blob-scene-haikei.svg');
     background-size: cover;
     font-family:'GmarketSans';
     font-size: var(--font-medium);
